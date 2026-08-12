@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steven Parker — Digital Marketing &amp; Content Strategist</title>
+<meta name="description" content="Steven Parker is a digital marketing and content strategist helping businesses turn social media presence into a system for attention, engagement, and growth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #10121a;
+    --ink-2: #191c27;
+    --ink-3: #21252f;
+    --paper: #f2eee2;
+    --paper-2: #e9e2cf;
+    --paper-3: #ddd3b8;
+    --brass: #c79a3d;
+    --brass-soft: #e6c877;
+    --teal: #3a6b62;
+    --teal-soft: #6ea89b;
+    --ink-text: #ece8dc;
+    --ink-text-dim: rgba(236,232,220,0.62);
+    --body-ink: #191a20;
+    --body-ink-dim: rgba(25,26,32,0.64);
+    --rule-on-ink: rgba(236,232,220,0.14);
+    --rule-on-paper: rgba(25,26,32,0.14);
+    --max: 1180px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--ink-text);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  ::selection{background:var(--brass); color:var(--ink);}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--brass);
+    outline-offset:3px;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:currentColor;
+    display:inline-block;
+  }
+  .on-ink .eyebrow{color:var(--brass-soft);}
+  .on-paper .eyebrow{color:var(--teal);}
+
+  h1,h2,h3,h4{
+    font-family:var(--serif);
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(16,18,26,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule-on-ink);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brandmark{
+    display:flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.08em;
+    text-decoration:none; color:var(--ink-text);
+  }
+  .brandmark .glyph{
+    width:30px; height:30px; border:1px solid var(--brass);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif); font-size:15px; color:var(--brass-soft);
+  }
+  nav.links{
+    display:flex; align-items:center; gap:30px;
+  }
+  nav.links a{
+    font-size:13px; text-decoration:none; color:var(--ink-text-dim);
+    font-family:var(--mono); letter-spacing:0.03em;
+    transition:color .2s ease;
+  }
+  nav.links a:hover{color:var(--brass-soft);}
+  .nav-cta{
+    border:1px solid var(--brass);
+    color:var(--brass-soft) !important;
+    padding:9px 16px;
+    font-size:12px !important;
+  }
+  .nav-cta:hover{
+    background:var(--brass);
+    color:var(--ink) !important;
+  }
+  .nav-toggle{display:none;}
+
+  @media(max-width:820px){
+    nav.links{ display:none; }
+    .nav-toggle{
+      display:block; background:none; border:1px solid var(--rule-on-ink);
+      color:var(--ink-text); font-family:var(--mono); font-size:11px;
+      padding:8px 12px; cursor:pointer;
+    }
+    nav.links.open{
+      display:flex; flex-direction:column; align-items:flex-start; gap:18px;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--ink-2); padding:24px 32px; border-bottom:1px solid var(--rule-on-ink);
+    }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:120px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 700px 420px at 82% -10%, rgba(199,154,61,0.16), transparent 60%),
+      radial-gradient(ellipse 500px 400px at -5% 90%, rgba(58,107,98,0.18), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;}
+  .hero h1{
+    font-size:clamp(48px, 8vw, 96px);
+    line-height:0.98;
+    color:var(--ink-text);
+    margin-top:22px;
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--brass-soft); font-weight:400;
+  }
+  .hero .role{
+    font-family:var(--mono);
+    font-size:15px;
+    color:var(--teal-soft);
+    letter-spacing:0.04em;
+    margin-top:20px;
+  }
+  .hero .pitch{
+    max-width:600px;
+    font-size:19px;
+    color:var(--ink-text-dim);
+    margin-top:22px;
+    line-height:1.6;
+  }
+  .hero .stack{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:28px;
+  }
+  .hero .stack span{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.04em;
+    border:1px solid var(--rule-on-ink); padding:7px 12px;
+    color:var(--ink-text-dim);
+  }
+  .cta-row{
+    display:flex; flex-wrap:wrap; gap:16px; margin-top:40px;
+  }
+  .btn{
+    font-family:var(--mono);
+    font-size:13px; letter-spacing:0.03em;
+    text-decoration:none;
+    padding:15px 26px;
+    display:inline-flex; align-items:center; gap:10px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .btn-primary{
+    background:var(--brass); color:var(--ink);
+    border-color:var(--brass);
+  }
+  .btn-primary:hover{ background:var(--brass-soft); border-color:var(--brass-soft); }
+  .btn-ghost{
+    border-color:var(--rule-on-ink); color:var(--ink-text);
+  }
+  .btn-ghost:hover{ border-color:var(--brass-soft); color:var(--brass-soft); }
+  .btn-ghost-paper{ border-color:var(--rule-on-paper); color:var(--body-ink); }
+  .btn-ghost-paper:hover{ border-color:var(--teal); color:var(--teal); }
+  .btn-arrow{ transition:transform .2s ease; }
+  .btn:hover .btn-arrow{ transform:translateX(3px); }
+
+  /* ---------- TICKER (signature element) ---------- */
+  .ledger{
+    border-top:1px solid var(--rule-on-ink);
+    border-bottom:1px solid var(--rule-on-ink);
+    background:var(--ink-2);
+    overflow:hidden;
+    padding:16px 0;
+    position:relative;
+  }
+  .ledger-label{
+    position:absolute; left:0; top:0; bottom:0; z-index:2;
+    display:flex; align-items:center; padding:0 20px;
+    background:linear-gradient(90deg, var(--ink-2) 60%, transparent);
+    font-family:var(--mono); font-size:11px; letter-spacing:0.14em;
+    color:var(--brass-soft);
+  }
+  .ledger-track{
+    display:flex; width:max-content;
+    animation:scroll-left 42s linear infinite;
+  }
+  .ledger-set{ display:flex; }
+  .ledger-item{
+    font-family:var(--mono); font-size:13px; color:var(--ink-text);
+    white-space:nowrap; padding:0 28px; display:flex; align-items:center; gap:10px;
+  }
+  .ledger-item .up{ color:var(--teal-soft); }
+  .ledger-item::after{
+    content:"◆"; color:var(--rule-on-ink); font-size:8px; margin-left:28px;
+  }
+  @keyframes scroll-left{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ledger-track{ animation:none; }
+  }
+
+  /* ---------- SECTION shells ---------- */
+  section{ padding:110px 0; position:relative; }
+  .on-paper{ background:var(--paper); color:var(--body-ink); }
+  .on-ink{ background:var(--ink); color:var(--ink-text); }
+  .section-head{
+    max-width:640px; margin-bottom:64px;
+  }
+  .section-head h2{ font-size:clamp(32px,4.4vw,50px); margin-top:18px; }
+  .section-head p{ margin-top:18px; font-size:17px; }
+  .on-paper .section-head p{ color:var(--body-ink-dim); }
+  .on-ink .section-head p{ color:var(--ink-text-dim); }
+
+  /* ---------- WHAT I DO ---------- */
+  .buckets{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--rule-on-paper);
+    border:1px solid var(--rule-on-paper);
+  }
+  .bucket{
+    background:var(--paper); padding:32px 26px;
+  }
+  .bucket .tag{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em;
+    color:var(--teal);
+  }
+  .bucket h3{
+    font-family:var(--serif); font-size:24px; margin-top:14px; font-weight:500;
+  }
+  .bucket ul{
+    list-style:none; margin:22px 0 0; padding:0;
+  }
+  .bucket li{
+    font-size:14.5px; color:var(--body-ink-dim);
+    padding:9px 0; border-top:1px solid var(--rule-on-paper);
+  }
+  .bucket li:first-child{ border-top:none; }
+  @media(max-width:940px){
+    .buckets{ grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:560px){
+    .buckets{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- FEATURED WORK ---------- */
+  .case{
+    border-top:1px solid var(--rule-on-ink);
+    padding:72px 0;
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:start;
+  }
+  .case:last-of-type{ border-bottom:1px solid var(--rule-on-ink); }
+  .case-media{
+    display:grid; gap:12px;
+  }
+  .case-media img{
+    width:100%; border:1px solid var(--rule-on-ink);
+  }
+  .case-media.multi{
+    grid-template-columns:1fr 1fr;
+  }
+  .case-media.multi img:first-child{ grid-column:1 / -1; }
+  .case-media figcaption{
+    display:none;
+  }
+  .case-num{
+    font-family:var(--mono); font-size:12px; color:var(--brass-soft);
+    letter-spacing:0.12em;
+  }
+  .case-info h3{
+    font-size:clamp(26px,3vw,36px); margin-top:12px; color:var(--ink-text);
+  }
+  .case-info .client-sub{
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-text-dim);
+    margin-top:8px; letter-spacing:0.02em;
+  }
+  .case-info .desc{
+    margin-top:20px; color:var(--ink-text-dim); font-size:15.5px; line-height:1.65;
+    max-width:56ch;
+  }
+  .case-services{
+    display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;
+  }
+  .case-services span{
+    font-family:var(--mono); font-size:11px; border:1px solid var(--rule-on-ink);
+    padding:6px 10px; color:var(--ink-text-dim);
+  }
+  .case-path{
+    margin-top:32px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--rule-on-ink);
+    border-left:1px solid var(--rule-on-ink);
+  }
+  .case-path div{
+    padding:16px 16px 18px; border-right:1px solid var(--rule-on-ink);
+    border-bottom:1px solid var(--rule-on-ink);
+  }
+  .case-path .k{
+    font-family:var(--mono); font-size:10px; letter-spacing:0.1em;
+    color:var(--brass-soft); display:block; margin-bottom:6px;
+  }
+  .case-path .v{ font-size:13px; color:var(--ink-text-dim); line-height:1.45; }
+  .case-link{
+    margin-top:26px; display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12.5px; color:var(--teal-soft);
+    text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .case-link:hover{ border-color:var(--teal-soft); }
+
+  @media(max-width:900px){
+    .case{ grid-template-columns:1fr; gap:32px; }
+    .case-path{ grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:560px){
+    .case-path{ grid-template-columns:1fr; }
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process-list{
+    display:grid; gap:0;
+  }
+  .process-row{
+    display:grid; grid-template-columns:110px 1fr; gap:28px;
+    padding:30px 0; border-top:1px solid var(--rule-on-paper);
+    align-items:baseline;
+  }
+  .process-list .process-row:last-child{ border-bottom:1px solid var(--rule-on-paper); }
+  .process-row .pnum{
+    font-family:var(--serif); font-size:44px; color:var(--paper-3);
+    font-weight:400;
+  }
+  .process-row h3{
+    font-family:var(--mono); font-size:15px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--body-ink); font-weight:600;
+  }
+  .process-row p{
+    margin-top:8px; color:var(--body-ink-dim); font-size:15.5px; max-width:52ch;
+  }
+  @media(max-width:640px){
+    .process-row{ grid-template-columns:1fr; gap:8px; }
+  }
+
+  /* ---------- CLIENT STRIP ---------- */
+  .clients-head{ max-width:640px; }
+  .client-strip{
+    margin-top:56px;
+    display:grid; grid-template-columns:repeat(5,1fr);
+    border-top:1px solid var(--rule-on-ink);
+    border-left:1px solid var(--rule-on-ink);
+  }
+  .client-strip div{
+    padding:30px 18px; border-right:1px solid var(--rule-on-ink);
+    border-bottom:1px solid var(--rule-on-ink);
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-text-dim);
+    line-height:1.5; min-height:120px; display:flex; align-items:center;
+  }
+  @media(max-width:900px){ .client-strip{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:560px){ .client-strip{ grid-template-columns:1fr; } }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;
+  }
+  .about-grid .big-quote{
+    font-family:var(--serif); font-size:clamp(26px,3.2vw,38px);
+    line-height:1.28; color:var(--body-ink);
+  }
+  .about-grid .facts{
+    display:grid; gap:0; margin-top:36px;
+  }
+  .about-grid .facts div{
+    padding:14px 0; border-top:1px solid var(--rule-on-paper);
+    display:flex; justify-content:space-between; font-size:13.5px;
+    font-family:var(--mono); color:var(--body-ink-dim);
+  }
+  .about-grid .facts div span:last-child{ color:var(--body-ink); }
+  @media(max-width:860px){
+    .about-grid{ grid-template-columns:1fr; gap:40px; }
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{
+    text-align:left;
+    padding:130px 0;
+  }
+  .final-cta h2{
+    font-size:clamp(38px,6vw,68px); max-width:820px; color:var(--ink-text);
+  }
+  .final-cta p{
+    margin-top:22px; font-size:18px; color:var(--ink-text-dim); max-width:520px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink-2); border-top:1px solid var(--rule-on-ink);
+    padding:56px 0 36px;
+  }
+  .footer-grid{
+    display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:40px;
+  }
+  footer h4{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em;
+    color:var(--brass-soft); text-transform:uppercase; margin-bottom:16px;
+  }
+  footer p, footer a{
+    font-size:14px; color:var(--ink-text-dim); text-decoration:none; line-height:1.9;
+    display:block;
+  }
+  footer a:hover{ color:var(--brass-soft); }
+  .footer-bottom{
+    margin-top:56px; padding-top:24px; border-top:1px solid var(--rule-on-ink);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-family:var(--mono); font-size:11.5px; color:var(--ink-text-dim);
+  }
+  @media(max-width:760px){
+    .footer-grid{ grid-template-columns:1fr; gap:32px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brandmark" href="#top">
+      <span class="glyph">SP</span>
+      STEVEN&nbsp;PARKER
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Work&nbsp;With&nbsp;Me →</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">MENU</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero on-ink" style="padding-top:96px;">
+    <div class="wrap hero-inner">
+      <span class="eyebrow">Digital Marketing &amp; Content Strategy</span>
+      <h1>Steven Parker</h1>
+      <div class="role">Building systems for attention, engagement, and growth.</div>
+      <p class="pitch">I help businesses turn scattered social media effort into a working system — the strategy, the content, the brand, and the funnel, all pointed at the same goal.</p>
+      <div class="stack">
+        <span>Social Media</span>
+        <span>Content Strategy</span>
+        <span>Video</span>
+        <span>Branding</span>
+        <span>Marketing</span>
+      </div>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">View My Work <span class="btn-arrow">→</span></a>
+        <a href="#contact" class="btn btn-ghost">Work With Me <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEDGER TICKER (signature element) -->
+  <div class="ledger" aria-label="Selected results">
+    <div class="ledger-track">
+      <div class="ledger-set">
+        <span class="ledger-item"><span class="up">▲</span> 50 purchases — Clean Slate Pro Campaign</span>
+        <span class="ledger-item"><span class="up">▲</span> $10.9K+ tracked ad value across 8 campaigns</span>
+        <span class="ledger-item"><span class="up">▲</span> 12-week coaching system built from zero</span>
+        <span class="ledger-item"><span class="up">▲</span> 3-day certification funnel designed</span>
+        <span class="ledger-item"><span class="up">▲</span> 5 brand identities shipped</span>
+        <span class="ledger-item"><span class="up">▲</span> Instagram, TikTok &amp; LinkedIn launched from scratch</span>
+        <span class="ledger-item"><span class="up">▲</span> 7 studio suites ready for booking</span>
+      </div>
+      <div class="ledger-set" aria-hidden="true">
+        <span class="ledger-item"><span class="up">▲</span> 50 purchases — Clean Slate Pro Campaign</span>
+        <span class="ledger-item"><span class="up">▲</span> $10.9K+ tracked ad value across 8 campaigns</span>
+        <span class="ledger-item"><span class="up">▲</span> 12-week coaching system built from zero</span>
+        <span class="ledger-item"><span class="up">▲</span> 3-day certification funnel designed</span>
+        <span class="ledger-item"><span class="up">▲</span> 5 brand identities shipped</span>
+        <span class="ledger-item"><span class="up">▲</span> Instagram, TikTok &amp; LinkedIn launched from scratch</span>
+        <span class="ledger-item"><span class="up">▲</span> 7 studio suites ready for booking</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT I DO -->
+  <section id="services" class="on-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What I Do</span>
+        <h2>Four disciplines, one system.</h2>
+        <p>Video editing, funnels, branding — these aren't separate skills I happen to have. They're tools inside one marketing service, each pointed at getting a business more attention and turning that attention into growth.</p>
+      </div>
+      <div class="buckets">
+        <div class="bucket">
+          <span class="tag">Content</span>
+          <h3>Content</h3>
+          <ul>
+            <li>Short-form video</li>
+            <li>Reels &amp; TikTok</li>
+            <li>Content strategy &amp; calendars</li>
+            <li>Video editing</li>
+            <li>Social media management</li>
+          </ul>
+        </div>
+        <div class="bucket">
+          <span class="tag">Growth</span>
+          <h3>Growth</h3>
+          <ul>
+            <li>Social media strategy</li>
+            <li>Audience growth</li>
+            <li>Lead generation</li>
+            <li>Conversion funnels</li>
+            <li>Marketing campaigns</li>
+          </ul>
+        </div>
+        <div class="bucket">
+          <span class="tag">Brand</span>
+          <h3>Brand</h3>
+          <ul>
+            <li>Brand identity</li>
+            <li>Graphic design</li>
+            <li>Flyers &amp; promo materials</li>
+            <li>Social media design</li>
+          </ul>
+        </div>
+        <div class="bucket">
+          <span class="tag">Digital</span>
+          <h3>Digital</h3>
+          <ul>
+            <li>Landing pages</li>
+            <li>Digital products</li>
+            <li>Course development</li>
+            <li>Email &amp; lead funnels</li>
+            <li>Marketing automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED WORK -->
+  <section id="work" class="on-ink">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Featured Work</span>
+        <h2>Five businesses. Five different systems.</h2>
+        <p>Not thirty random graphics — a handful of projects that show the full arc: strategy, brand, content, and the funnel that turns it into results.</p>
+      </div>
+
+      <!-- CASE 01 -->
+      <article class="case">
+        <div class="case-media multi">
+          <img src="assets/fp-cover-01.jpg" alt="Forged Prime brand cover — 12-week elite online fitness coaching program">
+          <img src="assets/fp-foundation-03.jpg" alt="Forged Prime program foundation page">
+          <img src="assets/fp-blueprint-04.jpg" alt="Forged Prime weekly training blueprint">
+        </div>
+        <div class="case-info">
+          <span class="case-num">CASE 01</span>
+          <h3>Forged Prime</h3>
+          <div class="client-sub">12-Week Elite Online Fitness Coaching · Full digital product build</div>
+          <p class="desc">Built the complete digital ecosystem for an online coaching business — brand identity, a free 2-week lead program, Gamma-hosted program pages, structured pricing, and a full 12-week course, all packaged as one premium product instead of a loose set of workout PDFs.</p>
+          <div class="case-services">
+            <span>Brand Strategy</span><span>Fitness Marketing</span><span>Content Strategy</span>
+            <span>Digital Product Development</span><span>Funnel Development</span><span>Social Media</span>
+          </div>
+          <div class="case-path">
+            <div><span class="k">BEFORE</span><span class="v">Independent trainer, in-person only, no scalable digital offer.</span></div>
+            <div><span class="k">STRATEGY</span><span class="v">Package expertise into a tiered 12-week system with a free lead magnet.</span></div>
+            <div><span class="k">EXECUTION</span><span class="v">Brand identity, phased curriculum, funnel, pricing, course materials.</span></div>
+            <div><span class="k">RESULTS</span><span class="v">A scalable, premium coaching product — positioned as a system, not a PDF.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 02 -->
+      <article class="case">
+        <div class="case-media">
+          <img src="assets/fcg-flyer.jpg" alt="First Choice Global Venture LLC security training school flyer, front and back">
+        </div>
+        <div class="case-info">
+          <span class="case-num">CASE 02</span>
+          <h3>First Choice Global Venture LLC</h3>
+          <div class="client-sub">NYS-Licensed Security Guard Training School · Bronx, NY · fcgtrainings.com</div>
+          <p class="desc">Took over the firm's full digital presence — built Instagram, TikTok, and LinkedIn (personal and company) from the ground up, resolved broken links and outdated pricing across the WordPress site and booking system, and designed the firm's promotional flyer and refreshed brand mark.</p>
+          <div class="case-services">
+            <span>Full Digital Presence</span><span>Website Ownership</span><span>Social Media</span><span>Print Design</span>
+          </div>
+          <div class="case-path">
+            <div><span class="k">BEFORE</span><span class="v">No social presence, outdated site, inconsistent pricing.</span></div>
+            <div><span class="k">STRATEGY</span><span class="v">Own the full digital footprint under one consistent brand mark.</span></div>
+            <div><span class="k">EXECUTION</span><span class="v">Launched 3 platforms, fixed the site, designed a new flyer.</span></div>
+            <div><span class="k">RESULTS</span><span class="v">A consistent, active presence across web, social, and print.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 03 -->
+      <article class="case">
+        <div class="case-media">
+          <img src="assets/hitech-decal.jpg" alt="Hi-Tech Charities Health Care large-format promotional decal design">
+        </div>
+        <div class="case-info">
+          <span class="case-num">CASE 03</span>
+          <h3>Hi-Tech Charities Health Care</h3>
+          <div class="client-sub">NYS-Licensed Home Care Services Agency · Bronx, NY</div>
+          <p class="desc">Designed a large-format promotional decal for a home care agency serving five boroughs plus Westchester County — translating a long service list and existing brand identity into a clean, wall-scale visual layout, ready for print.</p>
+          <div class="case-services">
+            <span>Brand Design</span><span>Decal Design</span><span>Print Production</span>
+          </div>
+          <div class="case-path">
+            <div><span class="k">BEFORE</span><span class="v">A dense service list with no wall-scale visual presence.</span></div>
+            <div><span class="k">STRATEGY</span><span class="v">Turn the service list into a clear, scannable hierarchy.</span></div>
+            <div><span class="k">EXECUTION</span><span class="v">Designed and prepared a large-format decal for print.</span></div>
+            <div><span class="k">RESULTS</span><span class="v">Print-ready decal, installation currently pending on-site.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 04 -->
+      <article class="case">
+        <div class="case-media">
+          <img src="assets/shopify-ads.jpg" alt="Meta Ads Manager dashboard showing campaign performance for a Shopify theme store">
+        </div>
+        <div class="case-info">
+          <span class="case-num">CASE 04</span>
+          <h3>Clean Slate — Shopify Theme Store</h3>
+          <div class="client-sub">E-commerce · Paid social advertising</div>
+          <p class="desc">Ran Meta ad campaigns for a Shopify store selling premium Shopify themes — testing cold traffic, retargeting, and theme-specific promotions across eight active campaigns to drive website purchases.</p>
+          <div class="case-services">
+            <span>Meta Ads</span><span>Paid Social</span><span>Funnel Testing</span><span>Performance Analytics</span>
+          </div>
+          <div class="case-path">
+            <div><span class="k">BEFORE</span><span class="v">Organic-only traffic, no structured paid acquisition.</span></div>
+            <div><span class="k">STRATEGY</span><span class="v">Layer cold, warm, and promo campaigns against the same offer.</span></div>
+            <div><span class="k">EXECUTION</span><span class="v">Built and managed 8 campaigns across ad sets and creatives.</span></div>
+            <div><span class="k">RESULTS</span><span class="v">$10.9K+ tracked purchase value; top campaign drove 50 purchases.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CASE 05 -->
+      <article class="case">
+        <div class="case-media multi">
+          <img src="assets/sbss-before.jpg" alt="South Bronx Salon Suites Instagram profile before rebrand, coming soon placeholder">
+          <img src="assets/sbss-logo.jpg" alt="New South Bronx Salon Suites circular logo mark">
+          <img src="assets/sbss-flyer.jpg" alt="South Bronx Salon Suites rebranded flyer with stylist benefits and QR code">
+        </div>
+        <div class="case-info">
+          <span class="case-num">CASE 05</span>
+          <h3>South Bronx Salon Suites</h3>
+          <div class="client-sub">Beauty &amp; wellness · Suite rental for independent stylists</div>
+          <p class="desc">Rebuilt the brand from a placeholder "coming soon" Instagram into a full identity system — a new rose-gold logo mark and a rebranded flyer covering stylist benefits, chair availability, and a QR code to book a tour.</p>
+          <div class="case-services">
+            <span>Social Media Strategy</span><span>Content Planning</span><span>Branding</span>
+            <span>Graphic Design</span><span>Lead Generation</span><span>Local Marketing</span>
+          </div>
+          <div class="case-path">
+            <div><span class="k">BEFORE</span><span class="v">Placeholder Instagram, no logo, no way to inquire.</span></div>
+            <div><span class="k">STRATEGY</span><span class="v">Build a premium identity that speaks directly to stylists.</span></div>
+            <div><span class="k">EXECUTION</span><span class="v">New logo, rebranded flyer, QR-code booking path.</span></div>
+            <div><span class="k">RESULTS</span><span class="v">A launch-ready brand across 7 available studio chairs.</span></div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="on-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Process</span>
+        <h2>The same system, every time.</h2>
+        <p>Every project — whether it's a flyer or a full funnel — moves through the same five stages.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-row">
+          <span class="pnum">01</span>
+          <div>
+            <h3>Discover</h3>
+            <p>Understand the business, the audience, the offer, and the goals before anything gets designed.</p>
+          </div>
+        </div>
+        <div class="process-row">
+          <span class="pnum">02</span>
+          <div>
+            <h3>Strategize</h3>
+            <p>Develop the content, branding, and marketing strategy the rest of the work will follow.</p>
+          </div>
+        </div>
+        <div class="process-row">
+          <span class="pnum">03</span>
+          <div>
+            <h3>Create</h3>
+            <p>Produce the content, graphics, campaigns, and marketing assets the strategy calls for.</p>
+          </div>
+        </div>
+        <div class="process-row">
+          <span class="pnum">04</span>
+          <div>
+            <h3>Distribute</h3>
+            <p>Publish and distribute across the channels where the audience actually is.</p>
+          </div>
+        </div>
+        <div class="process-row">
+          <span class="pnum">05</span>
+          <div>
+            <h3>Optimize</h3>
+            <p>Analyze what's performing and improve it — the system keeps working after launch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED CLIENT WORK (in place of fabricated testimonials) -->
+  <section class="on-ink">
+    <div class="wrap">
+      <div class="section-head clients-head">
+        <span class="eyebrow">Selected Client Work</span>
+        <h2>Businesses I've built systems for.</h2>
+      </div>
+      <div class="client-strip">
+        <div>First Choice Global Venture LLC — Security Guard Training</div>
+        <div>Hi-Tech Charities Health Care — Home Care Services</div>
+        <div>South Bronx Salon Suites — Beauty &amp; Wellness</div>
+        <div>Forged Prime Coaching — Fitness &amp; Performance</div>
+        <div>Clean Slate — Shopify Theme Store</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="on-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">About</span>
+        <h2>About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p class="big-quote">"Great content isn't just supposed to look good. It should accomplish something."</p>
+        </div>
+        <div>
+          <p style="font-size:17px; color:var(--body-ink); line-height:1.7;">
+            I'm Steven Parker, a digital marketer and content strategist focused on helping businesses build stronger online presences. My experience spans social media strategy, short-form content, video editing, branding, graphic design, and digital marketing.
+          </p>
+          <p style="font-size:17px; color:var(--body-ink-dim); line-height:1.7; margin-top:16px;">
+            I combine creative execution with a growth-focused approach — treating video editing, funnels, and social media management as tools inside one marketing strategy, not a list of separate services.
+          </p>
+          <div class="facts">
+            <div><span>Based in</span><span>Bronx, NY</span></div>
+            <div><span>Focus</span><span>Marketing systems, not one-off graphics</span></div>
+            <div><span>Works with</span><span>Fitness, home care, beauty, security, e-commerce</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="on-ink final-cta">
+    <div class="wrap">
+      <span class="eyebrow">Let's Talk</span>
+      <h2 style="margin-top:18px;">Ready to grow your brand?</h2>
+      <p>Let's build something that gets attention — and turns that attention into action.</p>
+      <div class="cta-row">
+        <a href="mailto:parkersteven0715@gmail.com" class="btn btn-primary">Book a Consultation <span class="btn-arrow">→</span></a>
+        <a href="#work" class="btn btn-ghost">See the Work First</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Steven Parker</h4>
+        <p style="color:var(--ink-text-dim); max-width:32ch;">Digital Marketing &amp; Content Strategist — turning social media presence into a system for attention, engagement, and growth.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:parkersteven0715@gmail.com">parkersteven0715@gmail.com</a>
+        <a href="tel:+19294130331">(929) 413-0331</a>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <a href="#work">Featured Work</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Steven Parker. All rights reserved.</span>
+      <span>Built as a living system — updated as new work ships.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
